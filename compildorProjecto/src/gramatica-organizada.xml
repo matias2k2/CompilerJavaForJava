@@ -1,0 +1,139 @@
+<program> ::= <packageDeclaration> <importDeclaration>* <typeDeclaration>*
+
+<packageDeclaration> ::= "package" <packageName> ";"
+
+<packageName>::= <typeName>
+ 
+<importDeclaration> ::= "import" <typeName> ("." "*")? ";"
+
+<typeDeclaration> ::= <classDeclaration>
+
+<classDeclaration> ::= "class" <identifier> <classDeclaration1>
+
+<classDeclaration1> ::= extends <type> <classBody> | <classBody>
+
+<classBody> ::= "{" <classMember>* "}"
+
+<classMember> ::= <fieldDeclaration> | <methodDeclaration> | <mainMethod>
+
+<fieldDeclaration> ::= <modifiers> <type> <variableDeclarators> ";"
+
+<methodDeclaration> ::= <modifiers> <type> <identifier> <parameters> <methodBody>
+
+<mainMethod> ::= "public" "static" "void" "main" "(" "String" "[" "]" <identifier> ")" <methodBody>
+
+<modifiers> ::= <modifier>*
+
+<modifier> ::= "public" | "private" | "protected" | "static" | "final" | ...
+
+<type> ::= <primitiveType> | <classType>
+
+<primitiveType> ::= "int" | "double" | "boolean" | ...
+
+<classType> ::= <typeName>
+
+<typeName> ::= <identifier> <typeNameTail>
+
+<typeNameTail> ::= "." <identifier> <typeNameTail> | ε
+
+<variableDeclarators> ::= <variableDeclarator> <variableDeclaratorsTail>
+
+<variableDeclaratorsTail> ::= ("," <variableDeclarator>)*
+
+<variableDeclarator> ::= <identifier> ("=" <expression>)?
+
+<parameters> ::= "(" <parameterList>? ")"
+
+<parameterList> ::= <parameter> <parameterListTail>
+
+<parameterListTail> ::= ("," <parameter>)*
+
+<parameter> ::= <type> <identifier>
+
+<methodBody> ::= "{" <statements>* "}"
+
+<statements> ::= <statement> | <localVariableDeclarationStatement>
+
+<statement> ::= <expressionStatement> | <ifStatement> | <whileStatement> | 
+	<forStatement> | <switchStatement> | <returnStatement> | <breakStatement> | 
+	<continueStatement> | <tryStatement> | <throwStatement> | <block> // <method_Body>
+
+<whileStatement>::= "while "(" <conditionalExpression> ")" <methodBody>
+<expressionStatement> ::= <expression> ";"
+
+<forStatement> ::= "for" "(" <expression> ";" <expression> ";" <expression> ")"  <methodBody>
+<localVariableDeclarationStatement> ::= <type> <variableDeclarators> ";"
+
+<expression> ::= <assignmentExpression> | <conditionalExpression> | 
+	<logicalOrExpression> | <logicalAndExpression> | <inclusiveOrExpression> | 
+	<exclusiveOrExpression> | <andExpression> | <equalityExpression> | <relationalExpression> | 
+	<additiveExpression> | <multiplicativeExpression> | <unaryExpression> | <postfixExpression> | <primary> |
+        <prefixExpression>
+
+<assignmentExpression> ::= <conditionalExpression> <assignmentExpressionTail>
+
+<assignmentExpressionTail> ::= <assignmentOperator> <conditionalExpression> <assignmentExpressionTail> | ε
+
+<assignmentOperator> ::=  = | += | -= | *= | /= | &= | |= | ^= | %= | <<= | >>= | >>>=
+
+<conditionalExpression> ::= <logicalOrExpression> <conditionalExpressionTail>
+
+<conditionalExpressionTail> ::= "?" <expression> ":" <conditionalExpression> | ε
+
+<logicalOrExpression> ::= <logicalAndExpression> <logicalOrExpressionTail>
+
+<logicalOrExpressionTail> ::= "||" <logicalAndExpression> <logicalOrExpressionTail> | ε
+
+<logicalAndExpression> ::= <inclusiveOrExpression> <logicalAndExpressionTail>
+
+<logicalAndExpressionTail> ::= "&&" <inclusiveOrExpression> <logicalAndExpressionTail> | ε
+
+<inclusiveOrExpression> ::= <exclusiveOrExpression> <inclusiveOrExpressionTail>
+
+<inclusiveOrExpressionTail> ::= "|" <exclusiveOrExpression> <inclusiveOrExpressionTail> | ε
+
+<exclusiveOrExpression> ::= <andExpression> <exclusiveOrExpressionTail>
+
+<exclusiveOrExpressionTail> ::= "^" <andExpression> <exclusiveOrExpressionTail> | ε
+
+<andExpression> ::= <equalityExpression> <andExpressionTail>
+
+<andExpressionTail> ::= "&" <equalityExpression> <andExpressionTail> | ε
+
+<equalityExpression> ::= <relationalExpression> <equalityExpressionTail>
+
+<equalityExpressionTail> ::= ( "==" | "!=" ) <relationalExpression> <equalityExpressionTail> | ε
+
+<relationalExpression> ::= <additiveExpression> <relationalExpressionTail>
+
+<relationalExpressionTail> ::= ( "<" | ">" | "<=" | ">=" ) <additiveExpression> <relationalExpressionTail> | ε
+
+<additiveExpression> ::= <multiplicativeExpression> <additiveExpressionTail>
+
+<additiveExpressionTail> ::= ( "+" | "-" ) <multiplicativeExpression> <additiveExpressionTail> | ε
+
+<multiplicativeExpression> ::= <unaryExpression> <multiplicativeExpressionTail>
+
+<multiplicativeExpressionTail> ::= ( "*" | "/" | "%" ) <unaryExpression> <multiplicativeExpressionTail> | ε
+
+//<unaryExpression> ::= <unaryOperator>* <postfixExpression>
+
+<unaryExpression> ::= <postfixExpression> | <prefixExpression>
+
+<postfixExpression> ::= <primary> <postfixExpressionTail>
+
+<postfixExpressionTail> ::=  <postfixExpressionTail> <postfixOperator>| ε
+
+<postfixOperator> ::= ++ | --
+
+<prefixExpression> ::= <prefixExpressionTail> <primary>
+
+<prefixExpressionTail> ::= <prefixOperator> <prefixExpressionTail> | ε
+
+<prefixOperator> ::= ++ | -- | ! | + | - | ~
+
+<primary> ::= <literal> | <identifier> | "(" <expression> ")"
+
+<literal> ::= <integerLiteral> | <floatLiteral> | <booleanLiteral> | <stringLiteral> | <charLiteral> | 
+<nullLiteral> | <stringLiteral> | <byteLiteral> | <shortLiteral> | <longLiteral> | <doubleLiteral>
+

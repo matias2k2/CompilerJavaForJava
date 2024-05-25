@@ -1,0 +1,77 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Enum.java to edit this template
+ */
+package entity;
+
+/**
+ *
+ * @author tinar
+ */
+public enum Token {
+    PONTO_VG,
+    IGUAL,
+    MAIS,
+    ABRE_CHAVES,
+    FECHA_CHAVES,
+    ABRE_PARENTESES,
+    FECHA_PARENTESES,
+    IDENTIFICADOR,
+    DIGITO,
+    STRING,
+    CARACTER,
+    EXCLAMACAO,
+    TIL,
+    ARROBA,
+    HASHTAG,
+    CIFRAO,
+    PORCENTAGEM,
+    CIRCUNFLEXO,
+    E_COMERCIAL,
+    ASTERISCO,
+    MENOS,
+    UNDERSCORE,
+    PIPE,
+    BACKTICK,
+    ASPAS_SIMPLES,
+    DOIS_PONTOS,
+    VIRGULA,
+    MENOR,
+    MAIOR, 
+    OPERADOR_ACM,
+    OPERADOR_AME,
+    OPERADOR_AD,
+    OPERADOR_MAIOR,
+    OPERADOR_ATRSUBTRACAO,
+    OPERADOR_AMENOR,
+    CARDINAL,
+    OPERADOR_AIGUAL,
+    OPERADOR_DE_ADICAO,
+    OPERADOR_DE_DIVISAO,
+    OPERADOR_DE_ATRIBUICAO,
+    OPERADOR_ATR_ADICAO,
+    OPERADOR_ATR_INCREMENTO,
+    OPERADOR_ATR_DECREMENTO,
+    CONJUNTO_DE_PARENTES,
+    CONJUNTO_DE_PARENTES_RETOS,
+    RETOTNO_DE_CARRO,
+    TABULACAO,
+    NOVA_LINHA,
+    BARRA_INVERTIDA,
+    ASPAS_DUPLAS,
+    ASPAS_SIMPLE,
+    ALIMENTACAO,
+    INCREMENTO,
+    DECREMENTO,
+    INTEIRO,
+    PALAVRA_RESERVADA,
+    NUMERO_FLUTOANTE,
+    CONJUTOS_PARENTESES,
+    OPERADO_MAIOR_IGUAL,
+    OPERADO_MENOR_IGUAL,
+    PONTO,
+    Letra,
+    NUMERO
+    
+      
+}

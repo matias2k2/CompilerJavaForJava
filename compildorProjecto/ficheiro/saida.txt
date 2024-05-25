@@ -1,0 +1,14 @@
+Erro: Declaração de variável deve terminar com ';' em 5 erro :0
+Erro: Parêntese de abertura ausente após 'main' erro :1
+Erro: Parêntese de abertura ausente na chamada de método erro :2
+Erro: Esperado 'class' na declaração da classe em 1 erro :3
+Erro: Esperado 'class' na declaração da classe em 1 erro :4
+Erro: Chamada de método deve começar com um identificador válido erro :5
+Erro: Esperado 'class' na declaração da classe em 1 erro :6
+Erro: Esperado 'class' na declaração da classe em 1 erro :7
+Erro: Chamada de método deve começar com um identificador válido erro :8
+Erro: Esperado 'class' na declaração da classe em 1 erro :9
+Erro: Esperado 'class' na declaração da classe em 1 erro :10
+Erro: Chamada de método deve começar com um identificador válido erro :11
+Erro: Esperado 'class' na declaração da classe em 1 erro :12
+Erro: Esperado 'class' na declaração da classe em 1 erro :13
